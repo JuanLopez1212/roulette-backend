@@ -7,5 +7,8 @@
     "dev": "node --watch ./src/index.mjs"
   },
   "author": "Juan Diego López <juandiegolopezortiz4@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
