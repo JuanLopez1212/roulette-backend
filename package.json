@@ -1,0 +1,11 @@
+{
+  "name": "roulette-backend",
+  "version": "1.0.0",
+  "description": "API rest de una ruleta",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.mjs"
+  },
+  "author": "Juan Diego López <juandiegolopezortiz4@gmail.com>",
+  "license": "ISC"
+}
