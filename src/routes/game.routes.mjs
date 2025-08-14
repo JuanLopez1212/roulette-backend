@@ -1,7 +1,7 @@
 import { Router } from "express"
-import { authMiddleware } from "../middlewares/auth.middleware.mjs"
-import { requireRole } from "../middlewares/role.middleware.mjs"
 import { closeAndSpinGame, createGame, getGame, listGames, openGame } from "../controllers/game.controller.mjs"
+import authMiddleware from "../middlewares/auth.middleware.mjs"
+import { requireRole } from "../middlewares/role.middleware.mjs"
 
 
 const router = Router()
