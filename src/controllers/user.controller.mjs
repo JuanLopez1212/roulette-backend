@@ -52,9 +52,28 @@ const adjustBalance = async( req, res ) => {
     try {
         const { userId } = req.params.id
         const { amount } = req.body
-    
+        
+        if ( amount === undefined || isNaN( amount )) {
+            return res.status( 400 ).json( { message: 'Monto inválido' } )
+        }
+
+        const user = await userModel.findById( userId )
+        if ( !user ) {
+            return res.status( 404 ).json( { message: 'Usuario no encontrado' } )
+        }
+
+        user.balance = Number( amount )
+        await user.save()
+        return res.json( { message: 'Saldo ajustado exitosamente', balance: user.balance } )
     } 
     catch (error) {
         
     }
+}
+
+export {
+    getProfile,
+    deposit,
+    listUsers,
+    adjustBalance
 }
