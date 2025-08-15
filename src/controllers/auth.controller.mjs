@@ -26,7 +26,7 @@ const register = async( req, res ) => {
         const salt = bcrypt.genSaltSync( 10 )
         const hash = bcrypt.hashSync( password, salt )
 
-        const user = new userModel( { username, email, password: hash, totalDeposited: totalDeposited || [], balance: totalBalance } )
+        const user = new userModel( { username, email, password: hash, role, totalDeposited: totalDeposited || [], balance: totalBalance } )
         await user.save()
         return res.status( 201 ).json( { message: 'Usuario registrado correctamente' } )
     } 
